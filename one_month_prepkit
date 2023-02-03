@@ -124,6 +124,161 @@ public class Solution {
         }
     }
 }
+/*Lonely integer*/
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+import java.io.*;
+import java.util.*;
+
+class solution {
+
+  public static void main(String[] args){
+    Scanner sc = new Scanner(System.in);
+    
+    
+    int n = sc.nextInt();
+    int[] arr = new int[n];
+    int i, j;
+    int x = 0;
+    boolean state;
+    
+    
+    for (i = 0; i < n; i++) {
+      arr[i] = sc.nextInt();
+    }
+    
+    
+    for (i = 0; i < n; i++) {
+      state = true;
+      for (j = 0; j < i; j++) {
+        if (arr[i] == arr[j]) {
+          j = i; 
+          state = false;
+        }
+      }
+      if (state == true) {
+        for (j = i+1; j < n; j++) {
+          if (arr[i] == arr[j]) {
+            j = n; 
+            state = false;
+          }
+        }
+        if (state == true) {
+          x = i;        
+          i = n;         
+        }
+      }
+    }
+    
+    
+    System.out.println(arr[x]);
+  }
+}
+/*flipping bits*/
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+
+
+    /*
+     * Complete the 'flippingBits' function below.
+     *
+     * The function is expected to return a LONG_INTEGER.
+     * The functclass Result {ion accepts LONG_INTEGER n as parameter.
+     */
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+
+        long a = (1L << 32) - 1;
+        
+        for (int i = 0; i < n; i++) {
+            long m = sc.nextLong();
+            System.out.println(m ^ a);            
+        }
+        
+        sc.close();
+
+    }
+
+}
+/*counting sort1*/
+mport java.io.*;
+import java.math.*;
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+    
+    static void printArray(int[] ar) {
+        for (int n : ar) {
+            System.out.print(n + " ");
+        }
+        System.out.println("");
+    }
+    
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] arr = new int[100];
+        for (int i = 0; i < n; i++) {
+            arr[sc.nextInt()]++;
+        }
+        
+        printArray(arr);
+    }
+
+}
+
+/*pangrams*/
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+    public static boolean isPangram(String s) {
+        boolean[] isInside = new boolean[26];
+        for (char c : s.toCharArray()) {
+            if (Character.isLetter(c)) {
+                isInside[Character.toLowerCase(c)-'a'] = true;
+            }
+        }
+        for (boolean b : isInside) {
+            if (!b) return false;
+        }
+        return true;
+    }
+    
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine();
+        if (isPangram(s)) System.out.println("pangram");
+        else System.out.println("not pangram");
+    }
+}
+
+
+
+    
+
+
 
 
 
