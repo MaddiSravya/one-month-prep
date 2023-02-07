@@ -1,0 +1,49 @@
+//grading students
+public static List<Integer> gradingStudents(List<Integer> grades) {
+    // Write your code here
+        List<Integer>ls=new ArrayList();
+        for(int i=0;i<grades.size();i++){
+            int x=grades.get(i);
+            if(x>=38 &&(x+5-x%5)-x<3){
+                ls.add(x+5-x%5);
+            }
+            else{
+                ls.add(x);
+            }
+        
+        }
+        return ls;
+
+    }
+
+}
+//hashset
+ HashSet<String> set = new HashSet(t);
+        for (int i = 0; i < t; i++) {
+            set.add(pair_left[i] + " " + pair_right[i]);
+            System.out.println(set.size());
+        }
+ //java map
+ public static void main(String []argh)
+	{
+        HashMap<String, Integer> hash = new HashMap<String, Integer>();
+		Scanner in = new Scanner(System.in);
+		int n=in.nextInt();
+		in.nextLine();
+		for(int i=0;i<n;i++)
+		{
+			String name=in.nextLine();
+			int phone=in.nextInt();
+            hash.put(name, phone);
+			in.nextLine();
+		}
+		while(in.hasNext())
+		{
+			String s=in.nextLine();
+            if (hash.containsKey(s)) {
+              System.out.println(s + "=" + hash.get(s));
+          } else {
+              System.out.println("Not found");
+          }
+      
+		}
